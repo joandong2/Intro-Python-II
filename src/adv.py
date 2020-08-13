@@ -55,20 +55,19 @@ player1 = Player("John123123", room["outside"])
 
 while True:
     current_room = player1.current_room
-    print()
+    print("Current location: ============")
     print(player1.current_room.name)
     print(player1.current_room.description)
-    print()
+    print("=============")
     print("n = north, s = south, e = east, w = west, q =quit")
     user_input = input("next move: ")
     attribute = user_input + '_to'
 
     if user_input in ["n", "s", "w", "e"]:
         if hasattr(current_room, attribute):
-            if getattr(current_room, attribute) is not None:
-                player1.current_room = getattr(current_room, attribute)
-            else:
-                print('can\'t move in that direction')
+            player1.current_room = getattr(current_room, attribute)
+        else:
+            print("cant go in that direction")
     elif user_input == "q":
         print("Quittin")
         break

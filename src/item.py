@@ -1,5 +1,4 @@
 class Item:
-    def __init__(self, name, description, base_class = None):
+    def __init__(self, name, description):
         self.name = name
         self.discription = description
-        self.base_class = base_class
